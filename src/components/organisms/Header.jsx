@@ -19,7 +19,8 @@ const Header = () => {
   
   const navigate = useNavigate()
   const { user, isAuthenticated } = useSelector((state) => state.user)
-  const { logout } = useContext(AuthContext)
+const authContext = useContext(AuthContext)
+  const logout = authContext?.logout
   const { getCartItemCount } = useCart()
   
   const cartItemCount = getCartItemCount()
@@ -43,7 +44,11 @@ const loadCategories = async () => {
     }
   }
 
-  const handleLogout = async () => {
+const handleLogout = async () => {
+    if (!logout) {
+      console.warn("Logout method not available")
+      return
+    }
     try {
       await logout()
     } catch (error) {
