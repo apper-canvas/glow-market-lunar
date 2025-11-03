@@ -1,24 +1,28 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useContext, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "@/hooks/useCart";
+import { useSelector } from "react-redux";
+import { AuthContext } from "@/App";
+import categoryService from "@/services/api/categoryService";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
-import SearchBar from "@/components/molecules/SearchBar";
 import CartSidebar from "@/components/organisms/CartSidebar";
-import { useCart } from "@/hooks/useCart";
-import categoryService from "@/services/api/categoryService";
+import SearchBar from "@/components/molecules/SearchBar";
 
 const Header = () => {
-  const navigate = useNavigate();
-  const { getCartItemCount } = useCart();
-  const [categories, setCategories] = useState([]);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [showCartSidebar, setShowCartSidebar] = useState(false);
-  const [showCategoriesDropdown, setShowCategoriesDropdown] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const cartItemCount = getCartItemCount();
-
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [showCategoriesDropdown, setShowCategoriesDropdown] = useState(false)
+  const [categories, setCategories] = useState([])
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [showCartSidebar, setShowCartSidebar] = useState(false)
+  
+  const navigate = useNavigate()
+  const { user, isAuthenticated } = useSelector((state) => state.user)
+  const { logout } = useContext(AuthContext)
+  const { getCartItemCount } = useCart()
+  
+  const cartItemCount = getCartItemCount()
   useEffect(() => {
     loadCategories();
     
@@ -30,14 +34,22 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const loadCategories = async () => {
+const loadCategories = async () => {
     try {
-      const data = await categoryService.getAll();
-      setCategories(data);
+      const data = await categoryService.getAll()
+      setCategories(data)
     } catch (error) {
-      console.error("Error loading categories:", error);
+      console.error("Error loading categories:", error)
     }
-  };
+  }
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+    } catch (error) {
+      console.error("Logout error:", error)
+    }
+  }
 
   const handleSearch = (query) => {
     navigate(`/search?q=${encodeURIComponent(query)}`);
@@ -96,7 +108,7 @@ const Header = () => {
                     >
                       {categories.map((category) => (
                         <Link
-                          key={category.Id}
+key={category.Id}
                           to={`/category/${category.slug}`}
                           className="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-150"
                           onClick={() => setShowCategoriesDropdown(false)}
@@ -164,6 +176,42 @@ const Header = () => {
                   <ApperIcon name={showMobileMenu ? "X" : "Menu"} className="w-5 h-5" />
                 </Button>
               </div>
+</div>
+
+            {/* User Profile / Auth Section */}
+            <div className="flex items-center gap-4">
+              {isAuthenticated ? (
+                <div className="flex items-center gap-3">
+                  <span className="text-sm font-body text-gray-700">
+                    Welcome, {user?.firstName || 'User'}
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={handleLogout}
+                    className="text-gray-700 hover:text-primary"
+                  >
+                    <ApperIcon name="LogOut" className="w-4 h-4 mr-1" />
+                    Logout
+                  </Button>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <Link
+                    to="/login"
+                    className="text-sm font-body text-gray-700 hover:text-primary transition-colors"
+                  >
+                    Login
+                  </Link>
+                  <span className="text-gray-300">|</span>
+                  <Link
+                    to="/signup"
+                    className="text-sm font-body text-gray-700 hover:text-primary transition-colors"
+                  >
+                    Sign Up
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
 
@@ -195,7 +243,7 @@ const Header = () => {
                 <nav className="space-y-4">
                   {categories.map((category) => (
                     <Link
-                      key={category.Id}
+key={category.Id}
                       to={`/category/${category.slug}`}
                       className="block font-body font-medium text-gray-700 hover:text-primary transition-colors duration-200"
                       onClick={() => setShowMobileMenu(false)}
@@ -203,6 +251,42 @@ const Header = () => {
                       {category.name}
                     </Link>
                   ))}
+
+                  {/* Mobile Auth Section */}
+                  <div className="border-t border-gray-100 pt-6 mt-6">
+                    {isAuthenticated ? (
+                      <div className="space-y-3">
+                        <p className="text-sm font-body text-gray-600">
+                          Welcome, {user?.firstName || 'User'}
+                        </p>
+                        <Button
+                          variant="outline"
+                          onClick={handleLogout}
+                          className="w-full"
+                        >
+                          <ApperIcon name="LogOut" className="w-4 h-4 mr-2" />
+                          Logout
+                        </Button>
+                      </div>
+                    ) : (
+                      <div className="space-y-3">
+                        <Link
+                          to="/login"
+                          className="block w-full text-center py-3 bg-primary text-white rounded-lg font-body font-medium"
+                          onClick={() => setShowMobileMenu(false)}
+                        >
+                          Login
+                        </Link>
+                        <Link
+                          to="/signup"
+                          className="block w-full text-center py-3 border border-primary text-primary rounded-lg font-body font-medium"
+                          onClick={() => setShowMobileMenu(false)}
+                        >
+                          Sign Up
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                   <Link
                     to="/collections"
                     className="block font-body font-medium text-gray-700 hover:text-primary transition-colors duration-200"
