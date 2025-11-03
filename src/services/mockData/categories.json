@@ -1,0 +1,70 @@
+[
+  {
+    "Id": 1,
+    "name": "Skincare",
+    "slug": "skincare",
+    "subcategories": [
+      { "name": "Cleansers", "slug": "cleansers" },
+      { "name": "Serums", "slug": "serums" },
+      { "name": "Moisturizers", "slug": "moisturizers" },
+      { "name": "Treatments", "slug": "treatments" },
+      { "name": "Sunscreen", "slug": "sunscreen" }
+    ],
+    "image": "https://images.unsplash.com/photo-1556228578-dd526d1dd1c7?w=400",
+    "description": "Complete skincare solutions for healthy, glowing skin"
+  },
+  {
+    "Id": 2,
+    "name": "Makeup",
+    "slug": "makeup",
+    "subcategories": [
+      { "name": "Foundation", "slug": "foundation" },
+      { "name": "Concealer", "slug": "concealer" },
+      { "name": "Mascara", "slug": "mascara" },
+      { "name": "Lipstick", "slug": "lipstick" },
+      { "name": "Highlighter", "slug": "highlighter" },
+      { "name": "Eyeshadow", "slug": "eyeshadow" }
+    ],
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400",
+    "description": "Professional makeup for every look and occasion"
+  },
+  {
+    "Id": 3,
+    "name": "Haircare",
+    "slug": "haircare",
+    "subcategories": [
+      { "name": "Shampoo", "slug": "shampoo" },
+      { "name": "Conditioner", "slug": "conditioner" },
+      { "name": "Treatments", "slug": "treatments" },
+      { "name": "Styling", "slug": "styling" },
+      { "name": "Tools", "slug": "tools" }
+    ],
+    "image": "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400",
+    "description": "Everything you need for healthy, beautiful hair"
+  },
+  {
+    "Id": 4,
+    "name": "Fragrance",
+    "slug": "fragrance",
+    "subcategories": [
+      { "name": "Perfume", "slug": "perfume" },
+      { "name": "Body Spray", "slug": "body-spray" },
+      { "name": "Roll-on", "slug": "roll-on" }
+    ],
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400",
+    "description": "Captivating fragrances for every personality"
+  },
+  {
+    "Id": 5,
+    "name": "Tools & Accessories",
+    "slug": "tools",
+    "subcategories": [
+      { "name": "Facial Tools", "slug": "facial-tools" },
+      { "name": "Hair Tools", "slug": "hair-tools" },
+      { "name": "Makeup Brushes", "slug": "makeup-brushes" },
+      { "name": "Accessories", "slug": "accessories" }
+    ],
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400",
+    "description": "Professional tools and accessories for your beauty routine"
+  }
+]

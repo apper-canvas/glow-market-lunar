@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "productId": "1",
+    "rating": 5,
+    "title": "Amazing results!",
+    "content": "I've been using this vitamin C serum for 3 months and my skin looks so much brighter. Dark spots have significantly faded.",
+    "reviewerName": "Sarah M.",
+    "date": "2024-01-15",
+    "helpful": 23
+  },
+  {
+    "Id": 2,
+    "productId": "1",
+    "rating": 4,
+    "title": "Great product but takes time",
+    "content": "Good serum, but you need patience. Results started showing after 6 weeks of consistent use. Worth the wait!",
+    "reviewerName": "Emily R.",
+    "date": "2024-01-10",
+    "helpful": 15
+  },
+  {
+    "Id": 3,
+    "productId": "2",
+    "rating": 5,
+    "title": "Perfect for oily skin",
+    "content": "Finally found a moisturizer that doesn't make my face greasy. Absorbs quickly and keeps skin hydrated all day.",
+    "reviewerName": "Jessica L.",
+    "date": "2024-01-12",
+    "helpful": 18
+  },
+  {
+    "Id": 4,
+    "productId": "3",
+    "rating": 5,
+    "title": "Best foundation ever!",
+    "content": "Full coverage that lasts all day. The shade match is perfect and it doesn't oxidize. Highly recommend!",
+    "reviewerName": "Maria G.",
+    "date": "2024-01-08",
+    "helpful": 31
+  },
+  {
+    "Id": 5,
+    "productId": "5",
+    "rating": 5,
+    "title": "Saved my damaged hair",
+    "content": "My hair was so damaged from bleaching. This mask brought it back to life! Soft, shiny, and healthy again.",
+    "reviewerName": "Taylor K.",
+    "date": "2024-01-14",
+    "helpful": 27
+  },
+  {
+    "Id": 6,
+    "productId": "7",
+    "rating": 4,
+    "title": "Beautiful glow",
+    "content": "Love this highlighter! It gives such a natural glow without being too glittery. The rose gold shade is gorgeous.",
+    "reviewerName": "Ashley C.",
+    "date": "2024-01-11",
+    "helpful": 12
+  },
+  {
+    "Id": 7,
+    "productId": "9",
+    "rating": 5,
+    "title": "My signature scent",
+    "content": "This perfume is absolutely divine. The vanilla and floral notes blend perfectly. Gets compliments every time I wear it.",
+    "reviewerName": "Rachel D.",
+    "date": "2024-01-09",
+    "helpful": 21
+  },
+  {
+    "Id": 8,
+    "productId": "10",
+    "rating": 4,
+    "title": "Great for morning routine",
+    "content": "Really helps with puffiness in the morning. The jade feels so cooling and relaxing. Quality tool.",
+    "reviewerName": "Lauren H.",
+    "date": "2024-01-13",
+    "helpful": 16
+  }
+]

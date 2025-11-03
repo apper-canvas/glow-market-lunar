@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "name": "Summer Glow Essentials",
+    "slug": "summer-glow",
+    "description": "Get that perfect summer radiance with our curated collection of bronzers, highlighters, and skin-loving products.",
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600",
+    "productIds": ["7", "1", "6", "9"],
+    "featured": true
+  },
+  {
+    "Id": 2,
+    "name": "Clean Beauty Favorites",
+    "slug": "clean-beauty",
+    "description": "Discover our top-rated clean beauty products made with natural, sustainable ingredients.",
+    "image": "https://images.unsplash.com/photo-1556228578-dd526d1dd1c7?w=600",
+    "productIds": ["6", "8", "10", "5"],
+    "featured": true
+  },
+  {
+    "Id": 3,
+    "name": "Anti-Aging Powerhouse",
+    "slug": "anti-aging",
+    "description": "Turn back time with our most effective anti-aging treatments and serums.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600",
+    "productIds": ["1", "11", "2", "10"],
+    "featured": false
+  },
+  {
+    "Id": 4,
+    "name": "Everyday Makeup Must-Haves",
+    "slug": "everyday-makeup",
+    "description": "Everything you need for a flawless everyday look that enhances your natural beauty.",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600",
+    "productIds": ["3", "4", "7", "12"],
+    "featured": true
+  }
+]
